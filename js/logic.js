@@ -10,6 +10,8 @@ function renderHome(){
     pageString += "<p>Welcome to my personal site. Currently you can view the badges I have earned in the open badges system here. In the future I will also feature projects of mine on this site.</p>";
     pageString += "<h2>Featured Badges</h2>";
     pageString += getBadgesString(getBadgesByCategory(CAT_FEATURED));
+    pageString += "<h2>Featured Projects</h2>";
+    pageString += getProjectsString(getProjectsByCategory(PROJECTCAT_FEATURED));
     //I could have used document.getElementById("main").innerHTML instead
     $("main").html(pageString);
 }
