@@ -21,6 +21,7 @@ function getProjectsString(projectsToRender){
                 projectsString += "<p>" + tempProject.description + "</p>";
                 projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.source + "'>Source Code</a>";
 
+                //Render the Releases
                 let releases = [];
                 for(tempRelease in tempProject.releases){
                     releases.push([tempRelease, tempProject.releases[tempRelease].releasedate]);
@@ -37,6 +38,19 @@ function getProjectsString(projectsToRender){
                     projectsString += "<a class='btn btn-secondary' role='button' target='_blank' href='" + tempRelease.URL + "'>View</a>";
                 }
 
+                //Render the categories
+                projectsString += "<div class='projectCategories'>";
+                let first = true;
+                for(category in tempProject.categories){
+                    if(first){
+                        first = false;
+                    }else{
+                        projectsString += ", ";
+                    }
+                    projectsString += "<a href='#' onclick='onProjectCategoryClick(\"" + tempProject.categories[category] + "\")'>" + tempProject.categories[category] + "</a>";
+                }
+
+                projectsString += "</div>";
                 projectsString += "</div>";
                 break;
         }
@@ -62,4 +76,19 @@ function renderAllProjects(){
     let pageString = "<h1>All Projects</h1>";
     pageString += getProjectsString(projectData);
     $("main").html(pageString);
+}
+
+//Renders all the projects of a given category as a page
+function renderProjectsCategory(category){
+    console.log(category);
+    let pageString = "<h1>" + category + "</h1>";
+    pageString += getProjectsString(getProjectsByCategory(category));
+    $("main").html(pageString);
+}
+
+//Sets the category and calls the loadPage when a category is clicked
+function onProjectCategoryClick(category){
+    console.log(category);
+    localStorage.setItem("projectCategory", category);
+    loadPage("projectCategory");
 }

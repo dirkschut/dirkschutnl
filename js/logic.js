@@ -48,6 +48,9 @@ function loadPage(pageID){
         case "allProjects":
             renderAllProjects();
             break;
+        case "projectCategory":
+            renderProjectsCategory(localStorage.getItem("projectCategory"));
+            break;
         default:
             console.log("Unknown page ID: " + pageID + ".");
             loadPage("home");
