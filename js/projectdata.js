@@ -30,8 +30,16 @@ const projectData = {
         type: PROJECTTYPE_PROGRAMMING,
         categories: [PROJECTCAT_FEATURED, PROJECTCAT_PROGRAMMING],
         createddate: "June 18, 2020",
-        description: "This is my personal website. I plan to use it as a portfolio to show things I have made as well as badges and certificates I have earned.",
+        description: "This is my personal website. I plan to use it as a portfolio to show things I have made as well as badges and certificates I have earned. I used my old project Open Badges Portfolio as a base for this site.",
         programminglanguages: [PROGRAMMINGLANGUAGE_HTML5, PROGRAMMINGLANGUAGE_CSS, PROGRAMMINGLANGUAGE_JS],
         source: "https://github.com/mrDLSable/dirkschutnl",
+    },
+    "Open Badges Portfolio": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_PROGRAMMING],
+        createddate: "May 01, 2020",
+        description: "This is a website I created to display the open badges I earn. It was also used as the base for my website.",
+        programminglanguages: [PROGRAMMINGLANGUAGE_HTML5, PROGRAMMINGLANGUAGE_CSS, PROGRAMMINGLANGUAGE_JS],
+        source: "https://github.com/mrDLSable/badges",
     },
 };
