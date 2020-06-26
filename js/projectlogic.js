@@ -21,6 +21,10 @@ function getProjectsString(projectsToRender){
                 projectsString += "<p>" + tempProject.description + "</p>";
                 projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.source + "'>Source Code</a>";
 
+                if(tempProject.location != null){
+                    projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.location + "'>View</a>";
+                }
+
                 //Render the Releases
                 let releases = [];
                 for(tempRelease in tempProject.releases){

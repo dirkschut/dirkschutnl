@@ -39,4 +39,12 @@ const projectData = {
         description: "This is a website I created to display the open badges I earn. It was also used as the base for my website.",
         source: "https://github.com/mrDLSable/badges",
     },
+    "Taivu": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_PROGRAMMING, PROJECTCAT_HTML5, PROJECTCAT_CSS, PROJECTCAT_JS],
+        createddate: "Jan 27, 2020",
+        description: "Taivu (Trappen In A Void Universe) is the basics of an incremental game to be played in the browser.",
+        source: "https://github.com/mrDLSable/taivu",
+        location: "https://mrdlsable.github.io/taivu/",
+    },
 };
