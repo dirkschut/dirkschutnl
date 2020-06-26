@@ -56,3 +56,10 @@ function getProjectsByCategory(category){
     }
     return tempProjects;
 }
+
+//Render all the projects without a filter
+function renderAllProjects(){
+    let pageString = "<h1>All Projects</h1>";
+    pageString += getProjectsString(projectData);
+    $("main").html(pageString);
+}

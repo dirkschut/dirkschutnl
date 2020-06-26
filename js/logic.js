@@ -45,6 +45,9 @@ function loadPage(pageID){
         case "allBadges":
             renderAllBadges();
             break;
+        case "allProjects":
+            renderAllProjects();
+            break;
         default:
             console.log("Unknown page ID: " + pageID + ".");
             loadPage("home");
