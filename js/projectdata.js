@@ -4,6 +4,9 @@ const PROJECTCAT_FEATURED = 0;
 const PROJECTCAT_PROGRAMMING = 1;
 
 const PROGRAMMINGLANGUAGE_CSHARP = 0;
+const PROGRAMMINGLANGUAGE_HTML5 = 1
+const PROGRAMMINGLANGUAGE_CSS = 2;
+const PROGRAMMINGLANGUAGE_JS = 3;
 
 // The data containing all of my projects.
 const projectData = {
@@ -22,5 +25,13 @@ const projectData = {
                 releasedate: "June 25, 2020",
             }
         },
+    },
+    "DirkSchut.nl": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_FEATURED, PROJECTCAT_PROGRAMMING],
+        createddate: "June 18, 2020",
+        description: "This is my personal website. I plan to use it as a portfolio to show things I have made as well as badges and certificates I have earned.",
+        programminglanguages: [PROGRAMMINGLANGUAGE_HTML5, PROGRAMMINGLANGUAGE_CSS, PROGRAMMINGLANGUAGE_JS],
+        source: "https://github.com/mrDLSable/dirkschutnl",
     },
 };
