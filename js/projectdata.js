@@ -31,6 +31,7 @@ const projectData = {
         createddate: "June 18, 2020",
         description: "This is my personal website. I plan to use it as a portfolio to show things I have made as well as badges and certificates I have earned. I used my old project Open Badges Portfolio as a base for this site.",
         source: "https://github.com/mrDLSable/dirkschutnl",
+        location: "https://dirkschut.nl",
     },
     "Open Badges Portfolio": {
         type: PROJECTTYPE_PROGRAMMING,
@@ -38,6 +39,7 @@ const projectData = {
         createddate: "May 01, 2020",
         description: "This is a website I created to display the open badges I earn. It was also used as the base for my website.",
         source: "https://github.com/mrDLSable/badges",
+        location: "https://mrdlsable.github.io/badges/",
     },
     "Taivu": {
         type: PROJECTTYPE_PROGRAMMING,

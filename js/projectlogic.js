@@ -22,7 +22,7 @@ function getProjectsString(projectsToRender){
                 projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.source + "'>Source Code</a>";
 
                 if(tempProject.location != null){
-                    projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.location + "'>View</a>";
+                    projectsString += "<a class='btn btn-secondary' role='button' target='_blank' href='" + tempProject.location + "'>View</a>";
                 }
 
                 //Render the Releases
