@@ -19,24 +19,24 @@ function getBadgesString(badgesToRender){
                 badgesString += "<div class='col-md-4 myBadge'><iframe class='badgrBadge' src='" + badgesToRender[badgeName].src + "' title='" + badgeName + "'></iframe>";
                 break;
             case TYPE_LOCAL:
-                badgesString += "<div class='col-md-4 myBadge testBadge'><h3>" + badgeName + "</h3>";
-                badgesString += "<p>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
+                badgesString += "<div class='col-md-4 myBadge testBadge'><h3 class='badgeTitle'>" + badgeName + "</h3>";
+                badgesString += "<p class='badgeAwarded'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
                 break;
             case TYPE_BADGR_CUSTOM:
                 badgesString += "<div class='col-md-4 myBadge'>";
                 badgesString += "<img class='badgeImg' src='https://api.badgr.io/public/assertions/" + badgesToRender[badgeName].id + "/image'>";
-                badgesString += "<h3>" + badgeName + "</h3>";
-                badgesString += "<p>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
-                badgesString += "<a class='btn btn-primary' role='button' target='_blank' href='https://badgecheck.io?url=https://api.badgr.io/public/assertions/" + badgesToRender[badgeName].id + "?identity__email=" + EMAILFORURL + "'>Verify</a>";
-                badgesString += "<a class='btn btn-secondary' role='button' target='_blank' href='https://badgrteam.badgr.com/public/assertions/" + badgesToRender[badgeName].id + "?identity__email=" + EMAILFORURL + "'>Badgr</a>";
+                badgesString += "<h3 class='badgeTitle'>" + badgeName + "</h3>";
+                badgesString += "<p class='badgeAwarded'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
+                badgesString += "<div class='badgeButtons'><a class='btn btn-primary' role='button' target='_blank' href='https://badgecheck.io?url=https://api.badgr.io/public/assertions/" + badgesToRender[badgeName].id + "?identity__email=" + EMAILFORURL + "'>Verify</a>";
+                badgesString += "<a class='btn btn-secondary' role='button' target='_blank' href='https://badgrteam.badgr.com/public/assertions/" + badgesToRender[badgeName].id + "?identity__email=" + EMAILFORURL + "'>Badgr</a></div>";
                 break;
             case TYPE_BADGECOLLECT_CUSTOM:
                 badgesString += "<div class='col-md-4 myBadge'>";
                 badgesString += "<img class='badgeImg' src='" + badgesToRender[badgeName].icon + "'>";
-                badgesString += "<h3>" + badgeName + "</h3>";
-                badgesString += "<p>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
-                badgesString += "<a class='btn btn-primary' role='button' target='_blank'>Verify</a>";
-                badgesString += "<a class='btn btn-secondary' role='button' target='_blank' href='https://badgecollect.app/profile/" + BADGECOLLECTPROFILE + "?assertion=" + badgesToRender[badgeName].id + "'>BadgeCollect</a>";
+                badgesString += "<h3 class='badgeTitle'>" + badgeName + "</h3>";
+                badgesString += "<p class='badgeAwarded'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
+                badgesString += "<div class='badgeButtons'><a class='btn btn-primary' role='button' target='_blank'>Verify</a>";
+                badgesString += "<a class='btn btn-secondary' role='button' target='_blank' href='https://badgecollect.app/profile/" + BADGECOLLECTPROFILE + "?assertion=" + badgesToRender[badgeName].id + "'>BadgeCollect</a></div>";
                 break;
         }
 
