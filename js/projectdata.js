@@ -23,7 +23,14 @@ const projectData = {
                 download: "https://github.com/mrDLSable/Simple-RockPaperScissors/releases/download/v0.1/RockPaperScissors_v0.1.zip",
                 releasedate: "June 25, 2020",
                 info: "A very simple Rock Paper Scissors game in the dotnet core console environment.",
-            }
+            },
+            "v0.2": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/Simple-RockPaperScissors/releases/tag/v0.2",
+                download: "https://github.com/mrDLSable/Simple-RockPaperScissors/releases/download/v0.2/RockPaperScissors_v0.2.zip",
+                releasedate: "June 28, 2020",
+                info: "Added some colours and options to automatically start the next turn and quit.",
+            },
         },
     },
     "DirkSchut.nl": {

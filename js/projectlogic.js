@@ -32,13 +32,14 @@ function getProjectsString(projectsToRender){
                 //Render the Releases
                 let releases = [];
                 for(tempRelease in tempProject.releases){
-                    releases.push([tempRelease, tempProject.releases[tempRelease].releasedate]);
+                    releases.push([tempRelease, new Date(tempProject.releases[tempRelease].releasedate).getTime()]);
                 }
-                sortable.sort(function(a, b){
+                releases.sort(function(a, b){
                     return b[1] - a[1];
                 });
 
                 if(releases.length > 0){
+                    console.log(releases);
                     let tempRelease = tempProject.releases[releases[0][0]];
                     projectsString += "<div class='release'>";
                     projectsString += "<div class='buttons'>";
