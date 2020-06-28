@@ -16,14 +16,18 @@ function getProjectsString(projectsToRender){
 
         switch(tempProject.type){
             case PROJECTTYPE_PROGRAMMING:
-                projectsString += "<div class='col-md-4 project'><h3>" + projectName + "</h3>";
+                projectsString += "<div class='col-md-4 project'>";
+                projectsString += "<div class='buttons'>";
+                projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempProject.source + "'><img class='icon' src='img/src.svg' /></a>";
+                if(tempProject.location != null){
+                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempProject.location + "'><img class='icon' src='img/live.svg' /></a>";
+                }
+                projectsString += "</div>";
+                
+                projectsString += "<h3 class='projectTitle'>" + projectName + "</h3>";
+
                 projectsString += "<p>Created: " + tempProject.createddate + "</p>";
                 projectsString += "<p>" + tempProject.description + "</p>";
-                projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.source + "'>Source Code</a>";
-
-                if(tempProject.location != null){
-                    projectsString += "<a class='btn btn-secondary' role='button' target='_blank' href='" + tempProject.location + "'>View</a>";
-                }
 
                 //Render the Releases
                 let releases = [];
@@ -36,10 +40,14 @@ function getProjectsString(projectsToRender){
 
                 if(releases.length > 0){
                     let tempRelease = tempProject.releases[releases[0][0]];
+                    projectsString += "<div class='release'>";
+                    projectsString += "<div class='buttons'>";
+                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempRelease.download + "'><img class='icon' src='img/down.svg' /></a>";
+                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempRelease.URL + "'><img class='icon' src='img/info.svg' /></a>";
+                    projectsString += "</div>";
                     projectsString += "<h4>" + releases[0][0] + "</h4>"
                     projectsString += "<p>Released: " + tempRelease.releasedate + "</p>";
-                    projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempRelease.download + "'>Download</a>";
-                    projectsString += "<a class='btn btn-secondary' role='button' target='_blank' href='" + tempRelease.URL + "'>View</a>";
+                    projectsString += "</div>";
                 }
 
                 //Render the categories
