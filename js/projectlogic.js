@@ -8,7 +8,7 @@ function getProjectsString(projectsToRender){
         return b[1] - a[1];
     });
 
-    let projectsString = "<div class='row'>";
+    let projectsString = `<div class='row'>`;
 
     for(projectID in sortable){
         let projectName = sortable[projectID][0];
@@ -16,18 +16,18 @@ function getProjectsString(projectsToRender){
 
         switch(tempProject.type){
             case PROJECTTYPE_PROGRAMMING:
-                projectsString += "<div class='col-md-4 project'>";
-                projectsString += "<div class='buttons'>";
-                projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempProject.source + "'><img class='icon' src='img/src.svg' /></a>";
+                projectsString += `<div class='col-md-4 project'>`;
+                projectsString += `<div class='buttons'>`;
+                projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempProject.source}'><img class='icon' src='img/src.svg' /></a>`;
                 if(tempProject.location != null){
-                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempProject.location + "'><img class='icon' src='img/live.svg' /></a>";
+                    projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempProject.location}'><img class='icon' src='img/live.svg' /></a>`;
                 }
-                projectsString += "</div>";
+                projectsString += `</div>`;
                 
-                projectsString += "<h3 class='projectTitle'>" + projectName + "</h3>";
+                projectsString += `<h3 class='projectTitle'>${projectName}</h3>`;
 
-                projectsString += "<p>Created: " + tempProject.createddate + "</p>";
-                projectsString += "<p>" + tempProject.description + "</p>";
+                projectsString += `<p>Created: ${tempProject.createddate}</p>`;
+                projectsString += `<p>${tempProject.description}</p>`;
 
                 //Render the Releases
                 let releases = [];
@@ -39,38 +39,37 @@ function getProjectsString(projectsToRender){
                 });
 
                 if(releases.length > 0){
-                    console.log(releases);
                     let tempRelease = tempProject.releases[releases[0][0]];
-                    projectsString += "<div class='release'>";
-                    projectsString += "<div class='buttons'>";
-                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempRelease.download + "'><img class='icon' src='img/down.svg' /></a>";
-                    projectsString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + tempRelease.URL + "'><img class='icon' src='img/info.svg' /></a>";
-                    projectsString += "</div>";
-                    projectsString += "<h4>" + releases[0][0] + "</h4>"
-                    projectsString += "<p>Released: " + tempRelease.releasedate + "</p>";
-                    projectsString += "<p>" + tempRelease.info + "</p>";
-                    projectsString += "</div>";
+                    projectsString += `<div class='release'>`;
+                    projectsString += `<div class='buttons'>`;
+                    projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.download}'><img class='icon' src='img/down.svg' /></a>`;
+                    projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.URL}'><img class='icon' src='img/info.svg' /></a>`;
+                    projectsString += `</div>`;
+                    projectsString += `<h4>${releases[0][0]}</h4>`;
+                    projectsString += `<p>Released: ${tempRelease.releasedate}</p>`;
+                    projectsString += `<p>${tempRelease.info}</p>`;
+                    projectsString += `</div>`;
                 }
 
                 //Render the categories
-                projectsString += "<div class='projectCategories'>";
+                projectsString += `<div class='projectCategories'>`;
                 let first = true;
                 for(category in tempProject.categories){
                     if(first){
                         first = false;
                     }else{
-                        projectsString += ", ";
+                        projectsString += `, `;
                     }
-                    projectsString += "<a href='#' onclick='onProjectCategoryClick(\"" + tempProject.categories[category] + "\")'>" + tempProject.categories[category] + "</a>";
+                    projectsString += `<a href='#' onclick='onProjectCategoryClick("${tempProject.categories[category]}")'>${tempProject.categories[category]}</a>`;
                 }
 
-                projectsString += "</div>";
-                projectsString += "</div>";
+                projectsString += `</div>`;
+                projectsString += `</div>`;
                 break;
         }
     }
 
-    projectsString += "</div>";
+    projectsString += `</div>`;
     return projectsString;
 }
 
@@ -87,22 +86,22 @@ function getProjectsByCategory(category){
 
 //Render all the projects without a filter
 function renderAllProjects(){
-    let pageString = "<h1>All Projects</h1>";
+    let pageString = `<h1>All Projects</h1>`;
     pageString += getProjectsString(projectData);
-    $("main").html(pageString);
+    $(`main`).html(pageString);
 }
 
 //Renders all the projects of a given category as a page
 function renderProjectsCategory(category){
     console.log(category);
-    let pageString = "<h1>" + category + "</h1>";
+    let pageString = `<h1>${category}</h1>`;
     pageString += getProjectsString(getProjectsByCategory(category));
-    $("main").html(pageString);
+    $(`main`).html(pageString);
 }
 
 //Sets the category and calls the loadPage when a category is clicked
 function onProjectCategoryClick(category){
     console.log(category);
-    localStorage.setItem("projectCategory", category);
-    loadPage("projectCategory");
+    localStorage.setItem(`projectCategory`, category);
+    loadPage(`projectCategory`);
 }
