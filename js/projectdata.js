@@ -22,6 +22,7 @@ const projectData = {
                 URL: "https://github.com/mrDLSable/Simple-RockPaperScissors/releases/tag/v0.1",
                 download: "https://github.com/mrDLSable/Simple-RockPaperScissors/releases/download/v0.1/RockPaperScissors_v0.1.zip",
                 releasedate: "June 25, 2020",
+                info: "A very simple Rock Paper Scissors game in the dotnet core console environment.",
             }
         },
     },

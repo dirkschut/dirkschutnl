@@ -47,6 +47,7 @@ function getProjectsString(projectsToRender){
                     projectsString += "</div>";
                     projectsString += "<h4>" + releases[0][0] + "</h4>"
                     projectsString += "<p>Released: " + tempRelease.releasedate + "</p>";
+                    projectsString += "<p>" + tempRelease.info + "</p>";
                     projectsString += "</div>";
                 }
 
