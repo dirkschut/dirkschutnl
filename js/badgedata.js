@@ -1,5 +1,3 @@
-const TYPE_BADGR = 0;
-const TYPE_LOCAL = 1;
 const TYPE_BADGR_CUSTOM = 2;
 const TYPE_BADGECOLLECT_CUSTOM = 3;
 
