@@ -31,9 +31,17 @@
     clear: both;
 }
 
+.myBadge .badgeButtons a{
+    margin-right: 5px;
+}
+
 .myBadge .badgesCategories{
 }
 
 .testBadge{
     background-color: lightgray;
+}
+
+.project .btn{
+    margin-right: 5px;
 }

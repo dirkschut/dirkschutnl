@@ -16,7 +16,7 @@ function getProjectsString(projectsToRender){
 
         switch(tempProject.type){
             case PROJECTTYPE_PROGRAMMING:
-                projectsString += "<div class='col-md-4'><h3>" + projectName + "</h3>";
+                projectsString += "<div class='col-md-4 project'><h3>" + projectName + "</h3>";
                 projectsString += "<p>Created: " + tempProject.createddate + "</p>";
                 projectsString += "<p>" + tempProject.description + "</p>";
                 projectsString += "<a class='btn btn-primary' role='button' target='_blank' href='" + tempProject.source + "'>Source Code</a>";
