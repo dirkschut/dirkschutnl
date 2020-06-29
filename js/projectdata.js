@@ -57,4 +57,19 @@ const projectData = {
         source: "https://github.com/mrDLSable/taivu",
         location: "https://mrdlsable.github.io/taivu/",
     },
+    "MathsApp": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_PROGRAMMING, PROJECTCAT_CSHARP],
+        createddate: "Dec 01, 2018",
+        description: "An app that converts decimal to hexadecimal and binary.",
+        source: "https://github.com/mrDLSable/MathsApp",
+    },
+    "Incremental": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_FEATURED, PROJECTCAT_PROGRAMMING, PROJECTCAT_HTML5, PROJECTCAT_CSS, PROJECTCAT_JS],
+        createddate: "Nov 16, 2018",
+        description: "An incremental game I made to learn some javascript.",
+        source: "https://github.com/mrDLSable/incremental",
+        location: "https://mrdlsable.github.io/incremental/",
+    },
 };
