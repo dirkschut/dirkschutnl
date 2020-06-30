@@ -36,11 +36,11 @@ function getBadgesString(badgesToRender){
 
         //Create badge String
         badgesString += "<div class='col-md-4 myBadge'>";
-        badgesString += "<img class='badgeImg' src='" + badgeImg + "'/>";
+        badgesString += "<div class='badgeButtons'><a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeVerify + "'><img class='icon' src='img/cert.svg' /></a>";
+        badgesString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeSourceURL + "'><img class='icon' src='img/cloud.svg' /></a></div>";
         badgesString += "<h3 class='badgeTitle'>" + badgeName + "</h3>";
+        badgesString += "<img class='badgeImg' src='" + badgeImg + "'/>";
         badgesString += "<p class='badgeAwarded'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
-        badgesString += "<div class='badgeButtons'><a class='btn btn-primary' role='button' target='_blank' href='" + badgeVerify + "'>Verify</a>";
-        badgesString += "<a class='btn btn-secondary' role='button' target='_blank' href='" + badgeSourceURL + "'>" + badgeSource + "</a></div>";
 
         badgesString += "<div class='badgesCategories'>";
         let first = true;

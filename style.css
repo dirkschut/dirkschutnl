@@ -23,10 +23,16 @@
 }
 
 .myBadge .badgeAwarded{
+    clear: right;
 }
 
 .myBadge .badgeButtons{
-    clear: both;
+    float: right;
+}
+
+.myBadge .btn{
+    margin-right: 5px;
+    padding: 2px;
 }
 
 .myBadge .badgeButtons a{
@@ -56,7 +62,7 @@
     padding-right: 5px;
 }
 
-.project .btn .icon{
+.btn .icon{
     width: 32px;
 }
 
