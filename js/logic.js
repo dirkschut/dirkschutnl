@@ -31,7 +31,6 @@ function renderAbout(){
 //Load the page with the given page ID
 function loadPage(pageID){
     console.log("loading page: " + pageID);
-    localStorage.setItem("pageID", pageID)
     switch(pageID){
         case "home":
             renderHome();
