@@ -1,7 +1,7 @@
 //Waits for the page to be loaded
 //I could have used a self-executing function or a function with a timeout that checks document.readyState
 $(document).ready(function() {
-    loadPage(localStorage.getItem("pageID"));
+    loadPage("home");
 });
 
 //Renders the given badges on the site
