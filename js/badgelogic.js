@@ -21,7 +21,6 @@ function getBadgesString(badgesToRender){
         let badgeSourceURL;
 
         //Make badges into rows
-        console.log(badgeName + " " + colCounter)
         if(colCounter == 3){
             colCounter = 0;
             badgesString += "</div><div class='card-deck badgesRow'>";
