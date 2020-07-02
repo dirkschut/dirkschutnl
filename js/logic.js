@@ -3,6 +3,7 @@
 $(document).ready(function() {
     let params = new URLSearchParams(location.search);
     let page = params.get('p');
+    localStorage.setItem("category", params.get('c'));
     loadPage(page);
 });
 
@@ -41,21 +42,30 @@ function loadPage(pageID){
         case "about":
             renderAbout();
             break;
-        case "category":
+        case "category": {
             if(!checkCategoryHasBadges(localStorage.getItem("category"))){
                 localStorage.setItem("category", CAT_FEATURED);
             }
-            renderBadgesCategory(localStorage.getItem("category"));
+            let category = localStorage.getItem("category");
+            window.history.pushState(pageID, pageID, `?p=${pageID}&c=${category}`);
+            renderBadgesCategory(category);
             break;
+        }
         case "allBadges":
             renderAllBadges();
             break;
         case "allProjects":
             renderAllProjects();
             break;
-        case "projectCategory":
-            renderProjectsCategory(localStorage.getItem("projectCategory"));
+        case "projectCategory": {
+            if(!checkCategoryHasBadges(localStorage.getItem("category"))){
+                localStorage.setItem("category", CAT_FEATURED);
+            }
+            let category = localStorage.getItem("category");
+            window.history.pushState(pageID, pageID, `?p=${pageID}&c=${category}`);
+            renderBadgesCategory(category);
             break;
+        }
         default:
             console.log("Unknown page ID: " + pageID + ".");
             loadPage("home");

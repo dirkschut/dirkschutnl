@@ -116,6 +116,6 @@ function renderProjectsCategory(category){
 //Sets the category and calls the loadPage when a category is clicked
 function onProjectCategoryClick(category){
     console.log(category);
-    localStorage.setItem(`projectCategory`, category);
+    localStorage.setItem(`category`, category);
     loadPage(`projectCategory`);
 }
