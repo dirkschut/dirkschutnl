@@ -37,7 +37,7 @@ function getProjectsString(projectsToRender){
 
                 projectsString += `<div class='card-body'>`;
 
-                projectsString += `<p>Created: ${tempProject.createddate}</p>`;
+                projectsString += `<h6 class='card-subtitle'>Created: ${tempProject.createddate}</h6>`;
                 projectsString += `<p>${tempProject.description}</p>`;
 
                 //Render the Releases
@@ -59,8 +59,8 @@ function getProjectsString(projectsToRender){
                     projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.download}'><img class='icon' src='img/down.svg' /></a>`;
                     projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.URL}'><img class='icon' src='img/info.svg' /></a>`;
                     projectsString += `</div>`;
-                    projectsString += `<h4>${releases[0][0]}</h4>`;
-                    projectsString += `<p>Released: ${tempRelease.releasedate}</p>`;
+                    projectsString += `<h4 class='card-title'>${releases[0][0]}</h4>`;
+                    projectsString += `<h6 class='card-subtitle'>Released: ${tempRelease.releasedate}</h6>`;
                     projectsString += `<p>${tempRelease.info}</p>`;
                     projectsString += `</li></ul>`;
                 }

@@ -19,6 +19,7 @@
 
 .myBadge .card-body{
     padding: 10px;
+    padding-right: 5px;
 }
 
 .myBadge .badgeButtons{

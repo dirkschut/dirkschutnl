@@ -48,7 +48,7 @@ function getBadgesString(badgesToRender){
         badgesString += "<div class='card-header'><h5 class='card-title'>" + badgeName + "</h5></div>";
         badgesString += "<div class='card-body'>";
         badgesString += "<img class='badgeImg' src='" + badgeImg + "'/>";
-        badgesString += "<p>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "<br />";
+        badgesString += "<h6 class='card-subtitle'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</h6>";
         badgesString += "Source: " + badgeSource + "<br />";
         badgesString += "Issuer: <a href='" + badgesToRender[badgeName].issuerURL + "'>" + badgesToRender[badgeName].issuer + "</a><br />";
         badgesString += "</p>";
