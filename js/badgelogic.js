@@ -10,7 +10,8 @@ function getBadgesString(badgesToRender){
         return b[1] - a[1];
     });
 
-    let badgesString = "<div class='row'>";
+    let badgesString = "<div class='card-deck badgesRow'>";
+    let colCounter = 0;
 
     for(tempID in sortable){
         let badgeName = sortable[tempID][0];
@@ -18,6 +19,14 @@ function getBadgesString(badgesToRender){
         let badgeVerify;
         let badgeSource;
         let badgeSourceURL;
+
+        //Make badges into rows
+        console.log(badgeName + " " + colCounter)
+        if(colCounter == 3){
+            colCounter = 0;
+            badgesString += "</div><div class='card-deck badgesRow'>";
+        }
+        colCounter++;
 
         //Set badge values
         switch(badgesToRender[badgeName].type){
@@ -35,14 +44,17 @@ function getBadgesString(badgesToRender){
         }
 
         //Create badge String
-        badgesString += "<div class='col-md-4 myBadge'>";
-        badgesString += "<div class='badgeButtons'><a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeVerify + "'><img class='icon' src='img/cert.svg' /></a>";
-        badgesString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeSourceURL + "'><img class='icon' src='img/cloud.svg' /></a></div>";
-        badgesString += "<h3 class='badgeTitle'>" + badgeName + "</h3>";
+        badgesString += "<div class='myBadge card'>";
+        badgesString += "<div class='card-header'><h5 class='card-title'>" + badgeName + "</h5></div>";
+        badgesString += "<div class='card-body'>";
         badgesString += "<img class='badgeImg' src='" + badgeImg + "'/>";
-        badgesString += "<p class='badgeAwarded'>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "</p>";
+        badgesString += "<p>Awarded: " + new Date(badgesToRender[badgeName].awarded).toDateString() + "<br />";
+        badgesString += "Source: " + badgeSource + "<br />";
+        badgesString += "Issuer: <a href='" + badgesToRender[badgeName].issuerURL + "'>" + badgesToRender[badgeName].issuer + "</a><br />";
+        badgesString += "</p>";
 
-        badgesString += "<div class='badgesCategories'>";
+        badgesString += "</div>";
+        badgesString += "<div class='card-footer'>";
         let first = true;
         for(category in badgesToRender[badgeName].categories){
             if(first){
@@ -52,8 +64,10 @@ function getBadgesString(badgesToRender){
             }
             badgesString += "<a href='#' onclick='onCategoryClick(\"" + badgesToRender[badgeName].categories[category] + "\")'>" + badgesToRender[badgeName].categories[category] + "</a>";
         }
+        
+        badgesString += "<div class='btn-group badgeButtons' role='group' aria-label='Basic example'><a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeVerify + "'><img class='icon' src='img/cert.svg' /></a>";
+        badgesString += "<a class='btn btn-outline-secondary' role='button' target='_blank' href='" + badgeSourceURL + "'><img class='icon' src='img/cloud.svg' /></a></div>";
         badgesString += "</div>";
-
         badgesString += "</div>";
     }
 
