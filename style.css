@@ -3,10 +3,6 @@
 }
 
 .myBadge{
-    /*height: 290px;*/
-    /* border: 10px solid white;
-    background-color: #f0f0f0;
-    padding: 10px; */
     padding: 0px;
 }
 
@@ -25,12 +21,10 @@
     padding: 10px;
 }
 
-.myBadge .badgeTitle{
-    font-size: 18px;
-}
-
 .myBadge .badgeButtons{
-    float: right;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
 }
 
 .myBadge .btn{
@@ -45,19 +39,14 @@
     background-color: lightgray;
 }
 
-.project{
-    border: 10px solid white;
-    background-color: #f0f0f0;
-    padding: 10px;
-    padding-bottom: 2em;
-}
-
-.project .projectTitle{
-    font-size: 18px;
+.project .card-title{
+    margin-bottom: 0;
 }
 
 .project .buttons{
-    float: right;
+    position: absolute;
+    right: 0px;
+    top: 5px;
     padding-right: 5px;
 }
 
@@ -65,22 +54,10 @@
     width: 32px;
 }
 
+.projectsRow{
+    margin-bottom: 20px;
+}
+
 .project .btn{
-    margin-right: 5px;
     padding: 2px;
-}
-
-.project .release{
-    background-color: #e0e0e0;
-    padding: 10px;
-    padding-right: 5px;
-}
-
-.project .release .buttons{
-    padding-right: 0px;
-}
-
-.project .projectCategories{
-    bottom: 10px;
-    position: absolute;
 }

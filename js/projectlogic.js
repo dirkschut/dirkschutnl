@@ -8,23 +8,34 @@ function getProjectsString(projectsToRender){
         return b[1] - a[1];
     });
 
-    let projectsString = `<div class='row'>`;
+    let projectsString = `<div class='card-deck projectsRow'>`;
+    let colCounter = 0;
 
     for(projectID in sortable){
         let projectName = sortable[projectID][0];
         let tempProject = projectData[projectName];
 
+        //Make projects into rows
+        if(colCounter == 3){
+            colCounter = 0;
+            projectsString += `</div><div class='card-deck projectsRow'>`;
+        }
+        colCounter++;
+
         switch(tempProject.type){
             case PROJECTTYPE_PROGRAMMING:
-                projectsString += `<div class='col-md-4 project'>`;
-                projectsString += `<div class='buttons'>`;
+                projectsString += `<div class='card project'><div class='card-header'>`;
+                
+                projectsString += `<div class="btn-group buttons" role="group" aria-label="Basic example">`;
                 projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempProject.source}'><img class='icon' src='img/src.svg' /></a>`;
                 if(tempProject.location != null){
                     projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempProject.location}'><img class='icon' src='img/live.svg' /></a>`;
                 }
                 projectsString += `</div>`;
-                
-                projectsString += `<h3 class='projectTitle'>${projectName}</h3>`;
+
+                projectsString += `<h5 class='card-title'>${projectName}</h5></div>`;
+
+                projectsString += `<div class='card-body'>`;
 
                 projectsString += `<p>Created: ${tempProject.createddate}</p>`;
                 projectsString += `<p>${tempProject.description}</p>`;
@@ -38,21 +49,24 @@ function getProjectsString(projectsToRender){
                     return b[1] - a[1];
                 });
 
+                projectsString += `</div>`;
+
+
                 if(releases.length > 0){
                     let tempRelease = tempProject.releases[releases[0][0]];
-                    projectsString += `<div class='release'>`;
-                    projectsString += `<div class='buttons'>`;
+                    projectsString += `<ul class='list-group list-group-flush'><li class='list-group-item'>`;
+                    projectsString += `<div class="btn-group buttons" role="group" aria-label="Basic example">`;
                     projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.download}'><img class='icon' src='img/down.svg' /></a>`;
                     projectsString += `<a class='btn btn-outline-secondary' role='button' target='_blank' href='${tempRelease.URL}'><img class='icon' src='img/info.svg' /></a>`;
                     projectsString += `</div>`;
                     projectsString += `<h4>${releases[0][0]}</h4>`;
                     projectsString += `<p>Released: ${tempRelease.releasedate}</p>`;
                     projectsString += `<p>${tempRelease.info}</p>`;
-                    projectsString += `</div>`;
+                    projectsString += `</li></ul>`;
                 }
 
                 //Render the categories
-                projectsString += `<div class='projectCategories'>`;
+                projectsString += `<div class='card-footer'>`;
                 let first = true;
                 for(category in tempProject.categories){
                     if(first){
