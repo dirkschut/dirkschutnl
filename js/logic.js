@@ -1,7 +1,9 @@
 //Waits for the page to be loaded
 //I could have used a self-executing function or a function with a timeout that checks document.readyState
 $(document).ready(function() {
-    loadPage("home");
+    let params = new URLSearchParams(location.search);
+    let page = params.get('p');
+    loadPage(page);
 });
 
 //Renders the given badges on the site
@@ -31,6 +33,7 @@ function renderAbout(){
 //Load the page with the given page ID
 function loadPage(pageID){
     console.log("loading page: " + pageID);
+    window.history.pushState(pageID, pageID, '?p=' + pageID);
     switch(pageID){
         case "home":
             renderHome();
