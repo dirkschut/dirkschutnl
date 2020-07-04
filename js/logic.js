@@ -4,6 +4,7 @@ $(document).ready(function() {
     let params = new URLSearchParams(location.search);
     let page = params.get('p');
     localStorage.setItem("category", params.get('c'));
+    localStorage.setItem("project", params.get('project'));
     loadPage(page);
 });
 
@@ -33,8 +34,9 @@ function renderAbout(){
 
 //Load the page with the given page ID
 function loadPage(pageID){
-    console.log("loading page: " + pageID);
-    window.history.pushState(pageID, pageID, '?p=' + pageID);
+    console.log(`loading page: ${pageID}`);
+    let url = `?p=${pageID}`;
+
     switch(pageID){
         case "home":
             renderHome();
@@ -43,11 +45,9 @@ function loadPage(pageID){
             renderAbout();
             break;
         case "category": {
-            if(!checkCategoryHasBadges(localStorage.getItem("category"))){
-                localStorage.setItem("category", CAT_FEATURED);
-            }
             let category = localStorage.getItem("category");
-            window.history.pushState(pageID, pageID, `?p=${pageID}&c=${category}`);
+            url += `&c=${category}`;
+            window.history.pushState(pageID, pageID, `?p=${pageID}`);
             renderBadgesCategory(category);
             break;
         }
@@ -58,12 +58,15 @@ function loadPage(pageID){
             renderAllProjects();
             break;
         case "projectCategory": {
-            if(!checkCategoryHasBadges(localStorage.getItem("category"))){
-                localStorage.setItem("category", CAT_FEATURED);
-            }
             let category = localStorage.getItem("category");
-            window.history.pushState(pageID, pageID, `?p=${pageID}&c=${category}`);
+            url += `&c=${category}`;
             renderBadgesCategory(category);
+            break;
+        }
+        case "project": {
+            let project = localStorage.getItem("project");
+            url += `&project=${project}`;
+            renderProjectPage(project);
             break;
         }
         default:
@@ -71,4 +74,6 @@ function loadPage(pageID){
             loadPage("home");
             break;
     }
+
+    window.history.pushState(pageID, pageID, url);
 }

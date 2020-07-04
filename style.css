@@ -28,7 +28,7 @@
     bottom: 5px;
 }
 
-.myBadge .btn{
+.btn{
     padding: 2px;
 }
 
@@ -61,4 +61,14 @@
 
 .project .btn{
     padding: 2px;
+}
+
+.projectPage{
+    margin-top: 5px;
+}
+
+.projectPage .buttons{
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

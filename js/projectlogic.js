@@ -33,7 +33,7 @@ function getProjectsString(projectsToRender){
                 }
                 projectsString += `</div>`;
 
-                projectsString += `<h5 class='card-title'>${projectName}</h5></div>`;
+                projectsString += `<h5 class='card-title'><a href='#' onclick='onProjectClick("${projectName}")'>${projectName}</a></h5></div>`;
 
                 projectsString += `<div class='card-body'>`;
 
@@ -113,9 +113,73 @@ function renderProjectsCategory(category){
     $(`main`).html(pageString);
 }
 
+//Renders the given project
+function renderProjectPage(projectName){
+    let project = projectData[projectName];
+
+    console.log("PROJECT: " + projectName);
+    console.log(project);
+
+    let pageString = `
+        <div class='projectPage card'>
+            <div class='card-header'>
+                <h1 class='card-title'>${projectName}</h1>
+                <div class="btn-group buttons" role="group" aria-label="Basic example">
+                    <a class='btn btn-outline-secondary source' role='button' target='_blank' href='${project.source}'><img class='icon' src='img/src.svg' /></a>
+                    `;
+                    if(typeof project.location !== 'undefined') {pageString += `<a class='btn btn-outline-secondary location' role='button' target='_blank' href='${project.location}'><img class='icon' src='img/live.svg' /></a>`};
+                pageString += `</div>
+            </div>
+            <div class='card-body'>
+                <h3 class='card-subtitle'>Created: ${project.createddate}</h3>
+                <p>${project.description}</p>
+            </div>`;
+
+    //sort releases
+    let releases = [];
+    for(tempRelease in project.releases){
+        releases.push([tempRelease, new Date(project.releases[tempRelease].releasedate).getTime()]);
+    }
+    releases.sort(function(a, b){
+        return b[1] - a[1];
+    });
+
+    //add releases
+    if(releases.length > 0){
+        pageString += `<ul class='list-group list-group-flush'>`;
+        for(tempRelease in releases){
+            release = project.releases[releases[tempRelease][0]];
+            pageString += `
+                <li class='list-group-item'>
+                    <div class="btn-group buttons" role="group" aria-label="Basic example">
+                        <a class='btn btn-outline-secondary' role='button' target='_blank' href='${release.download}'><img class='icon' src='img/down.svg' /></a>
+                        <a class='btn btn-outline-secondary' role='button' target='_blank' href='${release.URL}'><img class='icon' src='img/info.svg' /></a>
+                    </div>
+                    <h4 class='card-title'>${releases[tempRelease][0]}</h4>
+                    <h6 class='card-subtitle'>Released: ${release.releasedate}</h6>
+                    <p>${release.info}</p>
+                </li>
+            `;
+        }
+        pageString += `</ul>`;
+    }
+
+    pageString += `</div>`;
+    
+
+    $(`main`).html(pageString);
+}
+
 //Sets the category and calls the loadPage when a category is clicked
 function onProjectCategoryClick(category){
     console.log(category);
     localStorage.setItem(`category`, category);
     loadPage(`projectCategory`);
+}
+
+//Sets the category and calls LoadPage
+function onProjectClick(project){
+    console.log(project);
+    localStorage.setItem(`project`, project);
+    loadPage(`project`);
 }
