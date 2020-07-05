@@ -7,12 +7,20 @@ const PROJECTCAT_CSHARP = "C#";
 const PROJECTCAT_HTML5 = "HTML5";
 const PROJECTCAT_CSS = "CSS";
 const PROJECTCAT_JS = "JavaScript";
+const PROJECTCAT_UNITY = "Unity";
 
 // The data containing all of my projects.
 const projectData = {
+    "GPS Game": {
+        type: PROJECTTYPE_PROGRAMMING,
+        categories: [PROJECTCAT_FEATURED, PROJECTCAT_PROGRAMMING, PROJECTCAT_CSHARP, PROJECTCAT_UNITY],
+        createddate: "July 05, 2020",
+        description: "This project is a game I am making to learn more about Unity3D and GPS, and to encourage me to cycle to more different locations and to learn..",
+        source: "https://github.com/mrDLSable/GPS-game",
+    },
     "Simple Rock Paper Scissors": {
         type: PROJECTTYPE_PROGRAMMING,
-        categories: [PROJECTCAT_FEATURED, PROJECTCAT_PROGRAMMING, PROJECTCAT_CSHARP],
+        categories: [PROJECTCAT_PROGRAMMING, PROJECTCAT_CSHARP],
         createddate: "June 24, 2020",
         description: "A very simple Rock Paper Scissors game played in a console window. Made to earn the badge Introductie C# (Introduction C#) which can be found <a target='_blank' href='https://badgecollect.app/badges/ea6269e5d329c62b96f29c1aceddedee'>here</a>.",
         source: "https://github.com/mrDLSable/Simple-RockPaperScissors",
