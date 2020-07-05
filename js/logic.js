@@ -60,7 +60,7 @@ function loadPage(pageID){
         case "projectCategory": {
             let category = localStorage.getItem("category");
             url += `&c=${category}`;
-            renderBadgesCategory(category);
+            renderProjectsCategory(category);
             break;
         }
         case "project": {

@@ -1,5 +1,6 @@
 //Returns an HTML string of the given projects, sorted by createddate.
 function getProjectsString(projectsToRender){
+    console.log(`getProjectsString`);
     let sortable = [];
     for(tempProject in projectsToRender){
         sortable.push([tempProject, projectsToRender[tempProject].createddate]);
@@ -107,7 +108,7 @@ function renderAllProjects(){
 
 //Renders all the projects of a given category as a page
 function renderProjectsCategory(category){
-    console.log(category);
+    console.log(`renderProjectcsCategory: ${category}`);
     let pageString = `<h1>${category}</h1>`;
     pageString += getProjectsString(getProjectsByCategory(category));
     $(`main`).html(pageString);
