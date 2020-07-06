@@ -17,6 +17,15 @@ const projectData = {
         createddate: "July 05, 2020",
         description: "This project is a game I am making to learn more about Unity3D and GPS, and to encourage me to cycle to more different locations and to learn..",
         source: "https://github.com/mrDLSable/GPS-game",
+        releases: {
+            "v0.0.1": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.1",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.1/GPS.Game.v0.0.1.apk",
+                releasedate: "July 06, 2020",
+                info: "The very first demo of using GPS and map tiles as a basis for a game. In this version, a map is generated around the user as he walks around in the real world. Sometimes the game has to be launched twice for the permission system to work properly.",
+            },
+        },
     },
     "Simple Rock Paper Scissors": {
         type: PROJECTTYPE_PROGRAMMING,
