@@ -25,6 +25,13 @@ const projectData = {
                 releasedate: "July 06, 2020",
                 info: "The very first demo of using GPS and map tiles as a basis for a game. In this version, a map is generated around the user as he walks around in the real world. Sometimes the game has to be launched twice for the permission system to work properly.",
             },
+            "v0.0.2": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.2",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.2/GPS.Game.v0.0.2.apk",
+                releasedate: "July 07, 2020",
+                info: "This release gives you freedom to look around the map by panning and zooming using your fingers. <ul><li>Zoom by pinching two fingers on the screen</li><li>Pan by dragging one finger across the screen</li></ul>",
+            },
         },
     },
     "Simple Rock Paper Scissors": {
