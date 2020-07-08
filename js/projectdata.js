@@ -32,6 +32,13 @@ const projectData = {
                 releasedate: "July 07, 2020",
                 info: "This release gives you freedom to look around the map by panning and zooming using your fingers. <ul><li>Zoom by pinching two fingers on the screen</li><li>Pan by dragging one finger across the screen</li></ul>",
             },
+            "v0.0.3": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.3",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.3/GPS.Game.v0.0.3.apk",
+                releasedate: "July 08, 2020",
+                info: "In this release, I have added loading and saving the game. Each tile now also records the last time you have visited. When you visit a tile a time is assigned when you can visit that tile again to gain a point in said tile. Currently, the time between earning points is equal to the points in the tile in hours, so if you have five points, you have to wait five hours to gain another point.",
+            },
         },
     },
     "Simple Rock Paper Scissors": {
