@@ -39,6 +39,13 @@ const projectData = {
                 releasedate: "July 08, 2020",
                 info: "In this release, I have added loading and saving the game. Each tile now also records the last time you have visited. When you visit a tile a time is assigned when you can visit that tile again to gain a point in said tile. Currently, the time between earning points is equal to the points in the tile in hours, so if you have five points, you have to wait five hours to gain another point.",
             },
+            "v0.0.4": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.4",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.4/GPS.Game.v0.0.4.apk",
+                releasedate: "July 14, 2020",
+                info: "This is the initial version released on the Google Play Store. It focused mostly on the GUI and the looks of the game. A number of boxes have been added to the GUI that display information and the zones now have a tint based on when the zone van be visited again. While I am posting this version today (July 14) it was built on July 10, but I decided to wait for the release on the Google Play store to release it here.",
+            },
         },
     },
     "Simple Rock Paper Scissors": {
