@@ -46,6 +46,17 @@ const projectData = {
                 releasedate: "July 14, 2020",
                 info: "This is the initial version released on the Google Play Store. It focused mostly on the GUI and the looks of the game. A number of boxes have been added to the GUI that display information and the zones now have a tint based on when the zone van be visited again. While I am posting this version today (July 14) it was built on July 10, but I decided to wait for the release on the Google Play store to release it here.",
             },
+            "v0.0.5": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.5",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.5/GPS.Game.v0.0.5.apk",
+                releasedate: "July 17, 2020",
+                info: `<ul><li>Fixed a couple of bugs.
+                </li><li>Added some UI elements to provide information.
+                </li><li>Lines to the 5 closest zones that are enterable.
+                </li><li>Limit the number of zones that have game objects to 250.
+                </li><li>The camera can now be detached from the player location or remain attached.</li></ul>`,
+            },
         },
     },
     "Simple Rock Paper Scissors": {
