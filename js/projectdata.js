@@ -57,6 +57,13 @@ const projectData = {
                 </li><li>Limit the number of zones that have game objects to 250.
                 </li><li>The camera can now be detached from the player location or remain attached.</li></ul>`,
             },
+            "v0.0.5a": {
+                prerelease: true,
+                URL: "https://github.com/mrDLSable/GPS-game/releases/tag/v0.0.5a",
+                download: "https://github.com/mrDLSable/GPS-game/releases/download/v0.0.5a/GPS.Game.v0.0.5a.apk",
+                releasedate: "July 19, 2020",
+                info: `Hopefully added support for 32 bit phones.`,
+            },
         },
     },
     "Simple Rock Paper Scissors": {
